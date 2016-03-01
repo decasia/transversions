@@ -1,0 +1,9 @@
+<h1>Documents</h1>
+
+<ul class="nav nav-pills nav-stacked">
+  {{#each model as |doc|}}
+  <li>
+    {{link-to doc.name "doc.show" doc}}
+  </li>
+  {{/each}}
+</ul>
