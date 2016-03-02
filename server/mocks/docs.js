@@ -6,7 +6,13 @@ module.exports = function(app) {
   const sampleContent = {
     version: "0.3.0",
     markups: [],
-    atoms: [],
+    atoms: [
+      [
+        "definition-atom",
+        "René",
+        {}
+      ]
+    ],
     cards: [],
     sections: [
       [1, "h2", [
@@ -17,7 +23,25 @@ module.exports = function(app) {
       ]],
       [1, "p", [
         [0, [], 0, "It is now some years since I detected how many were the false beliefs that I had from my earliest youth admitted as true, and how doubtful was everything I had since constructed on this basis; and from that time I was convinced that I must once for all seriously undertake to rid myself of all the opinions which I had formerly accepted, and commence to build anew from the foundation, if I wanted to establish any firm and permanent structure in the sciences.  But as this enterprise appeared to be a very great one, I waited until I had attained an age so mature that I could not hope that at any later date I should be better fitted to execute my design. This reason caused me to delay so long that I should feel that I was doing wrong were I to occupy in deliberation the time that yet remains to me for action.  To-day, then, since very opportunely for the plan I have in view I have delivered my mind from every care [and am happily agitated by no passions] and since I have procured for myself an assured leisure in a peaceable retirement, I shall at last seriously and freely address myself to the general upheaval of all my former opinions."]
-      ]]
+      ]],
+      [
+         1,
+         "p",
+         [
+           [
+             0,
+             [],
+             0,
+             "Can we link to an author? "
+           ],
+           [
+             1,
+             [],
+             0,
+             0
+           ]
+         ]
+       ]
     ]
   };
 
