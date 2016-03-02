@@ -7,7 +7,7 @@ export default Component.extend({
   // classNameBindings: ['isActive:active'],
   // isActive: computed.bool('editor.activeMarkupTagNames.isA'),
   click() {
-    let editor = this.get('editor.editor'); // don't ask me why the editor is a property of itself, but it is.
+    let editor = this.get('editor.editor'); // editor is actually an instance of "postEditor", which contains an "editor"
     editor.run(postEditor => {
       const term = editor.cursor.selectedText(),
             mention = postEditor.builder.createAtom("definition-atom", term, {});
