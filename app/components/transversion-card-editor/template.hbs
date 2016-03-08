@@ -7,7 +7,10 @@
   </div>
   <div class="col-xs-6 edit-actions">
     <div class="btn-group">
-      <button class="btn btn-primary" onclick={{action saveCard (hash name=data.summary)}}>Save</button>
+      <button class="btn btn-primary"
+        onclick={{action "saveTransversion" }}>
+        Save
+      </button>
       <button class="btn btn-default" onclick={{cancelCard}}>Cancel</button>
     </div>
   </div>
@@ -18,6 +21,7 @@
     {{#mobiledoc-editor
       mobiledoc=data.source
       atoms=(mobiledoc-atoms-list)
+      on-change=(action "updateAttribute" "source")
       as |editor|
     }}
       <div class="btn-toolbar">
@@ -41,6 +45,7 @@
     {{#mobiledoc-editor
       mobiledoc=data.transversion
       atoms=(mobiledoc-atoms-list)
+      on-change=(action "updateAttribute" "transversion")
       as |editor|
     }}
       <div class="btn-toolbar">
