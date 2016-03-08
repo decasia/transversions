@@ -1,0 +1,17 @@
+<hr>
+
+<div class="pull-right transversion-actions">
+  <button class="btn btn-small btn-primary" onclick={{editCard}}>Edit</button>
+</div>
+<p class="transversion-summary">
+  {{data.summary}}
+</p>
+
+<div class="row">
+  <div class="col-xs-6 source">
+    {{render-mobiledoc mobiledoc=data.source}}
+  </div>
+  <div class="col-xs-6 transversion">
+    {{render-mobiledoc mobiledoc=data.transversion}}
+  </div>
+</div>

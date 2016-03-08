@@ -3,3 +3,17 @@
 body, input, textarea {
   font-family: Lato, sans-serif;
 }
+
+.transversion-summary {
+  font-style: italic;
+  text-align: center;
+}
+
+.transversion, .transversion .__mobiledoc-editor  {
+  color: #A75F5F !important;
+}
+
+.__mobiledoc-editor {
+  font-size: 1.9rem;
+  line-height: 2.6rem;
+}

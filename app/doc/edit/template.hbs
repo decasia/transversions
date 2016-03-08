@@ -1,7 +1,8 @@
 <h1>Editing {{model.name}}</h1>
 
-{{#mobiledoc-editor
+{{#transversion-editor
     atoms=(mobiledoc-atoms-list)
+    cards=(mobiledoc-cards-list)
     mobiledoc=model.content as |editor|
 }}
   <div class="btn-toolbar">
@@ -13,19 +14,6 @@
       Subheading
       {{/mobiledoc-section-button}}
     </div>
-    <div class="btn-group">
-      {{#mobiledoc-markup-button editor=editor for="strong" classNames="btn btn-default btn-sm"}}
-        Bold
-      {{/mobiledoc-markup-button}}
-      {{#mobiledoc-markup-button editor=editor for="em" classNames="btn btn-default btn-sm"}}
-        Italic
-      {{/mobiledoc-markup-button}}
-    </div>
-    <div class="btn-group">
-      {{#mobiledoc-definition-button editor=editor classNames="btn btn-default btn-sm"}}
-        Define
-      {{/mobiledoc-definition-button}}
-    </div>
   </div>
 
-{{/mobiledoc-editor}}
+{{/transversion-editor}}

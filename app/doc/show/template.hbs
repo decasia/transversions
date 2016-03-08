@@ -2,4 +2,10 @@
 
 {{link-to "Edit" "doc.edit" model class="btn btn-default"}}
 
-{{render-mobiledoc mobiledoc=model.content}}
+{{render-mobiledoc
+  mobiledoc=model.content
+  cardNames=(mobiledoc-card-names)
+  atoms=(mobiledoc-atoms-list)
+}}
+
+{{log (mobiledoc-card-names)}}
