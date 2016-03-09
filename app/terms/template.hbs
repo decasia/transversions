@@ -1,0 +1,11 @@
+{{outlet}}
+
+{{#each model as |term|}}
+  <dl>
+    <dt>term</dt>
+    <dd>{{link-to term.name "term.show" term}}</dd>
+
+    <dt>definition</dt>
+    <dd>{{render-mobiledoc mobiledoc=term.definition}}</dd>
+  </dl>
+{{/each}}
