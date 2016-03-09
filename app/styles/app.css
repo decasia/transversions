@@ -48,3 +48,21 @@ h3.editor-section-title {
 .facing-page {
   /*background-color: #fafafa;*/
 }
+
+/* Transversion atom styles */
+.definition-atom a,
+.definition-atom a:link,
+.definition-atom a:visited,
+.definition-atom a:active,
+.definition-atom a:hover {
+  color: white;
+}
+.definition-atom a:active,
+.definition-atom a:hover {
+  text-decoration: none;
+  color: purple;
+}
+
+.-mobiledoc-kit__atom div {
+  display: inline-block;
+}

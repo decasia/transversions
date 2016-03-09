@@ -9,8 +9,8 @@ module.exports = function(app) {
     atoms: [
       [
         "definition-atom",
-        "René",
-        {}
+        "prudence",
+        {id: 1, name: "prudence"}
       ]
     ],
     cards: [
