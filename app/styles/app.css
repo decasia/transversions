@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic);
 
-body, input, textarea {
+body, input, textarea, button {
   font-family: Lato, sans-serif;
 }
 
@@ -10,14 +10,41 @@ body, input, textarea {
 }
 
 .transversion, .transversion .__mobiledoc-editor  {
-  color: #A75F5F !important;
+  color: #195D88 !important;
 }
 
 .transversion-meta {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+}
+
+.transversion-actions {
+  margin-right: 3em;
+  margin-left: 3em;
+}
+
+.transversion-edit-action {
+  padding: 25px 0 25px 40px;
+}
+
+h3.editor-section-title {
+  font-size: 15px;
+  margin-top: 3px;
+  margin-bottom: 3px
 }
 
 .__mobiledoc-editor {
   font-size: 1.9rem;
   line-height: 2.6rem;
+}
+
+.page, .facing-page {
+  padding-top: 4px;
+}
+
+.page {
+  border-right: 1px #bbb dotted;
+}
+
+.facing-page {
+  /*background-color: #fafafa;*/
 }
