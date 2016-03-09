@@ -15,8 +15,7 @@ export default Ember.Component.extend({
       });
     },
     updateAttribute: function(attribute, value) {
-      var updatedData = this.get('updatedData');
-      updatedData[attribute] = value;
+      this.updatedData[attribute] = value;
     },
   }
 });
