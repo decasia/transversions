@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-let { computed, Component } = Ember;
+let { computed, Component, isPresent } = Ember;
 
 export default Component.extend({
   tagName: 'button',
@@ -12,10 +12,15 @@ export default Component.extend({
       return;
     }
     editor.run(postEditor => {
-      const term = editor.cursor.selectedText(),
-            mention = postEditor.builder.createAtom("definition-atom", term, {});
+      const term = editor.cursor.selectedText();
+      if (!isPresent(term)) { // further sanity check for selected text
+        return;
+      }
+
+      const definition = postEditor.builder.createAtom("definition-atom", term, {id: 1, name: term});
+
       postEditor.deleteRange(editor.range);
-      postEditor.insertMarkers(editor.range.head, [mention]);
+      postEditor.insertMarkers(editor.range.head, [definition]);
     });
   }
 });
