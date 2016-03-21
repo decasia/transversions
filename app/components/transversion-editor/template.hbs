@@ -24,13 +24,27 @@
   {{/tether-to-selection}}
 {{/if}}
 
-{{#each componentCards as |card|}}
+{{#each editableComponentCards as |card|}}
   {{#ember-wormhole to=card.destinationElementId}}
     {{component card.cardName
         editor=editor
         postModel=card.postModel
         cardName=card.cardName
         data=card.data
+        editCard=(action card.callbacks.edit)
+        saveCard=(action card.callbacks.save)
+        cancelCard=(action card.callbacks.cancel)
+        removeCard=(action card.callbacks.remove)
+    }}
+  {{/ember-wormhole}}
+{{/each}}
+{{#each componentAtoms as |atom|}}
+  {{#ember-wormhole to=atom.destinationElementId}}
+    {{component atom.cardName
+        editor=editor
+        postModel=atom.postModel
+        cardName=atom.cardName
+        data=atom.data
     }}
   {{/ember-wormhole}}
 {{/each}}
