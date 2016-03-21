@@ -1,7 +1,5 @@
-import definitionAtom from './dom/definition';
-import createComponentAtom from 'transverse/utils/create-component-atom';
-import createComponentCard from 'ember-mobiledoc-editor/utils/create-component-card';
+import createComponentAtom from 'ember-mobiledoc-editor/utils/create-component-atom';
 
 export default [
-  createComponentCard('definition-atom')
+  createComponentAtom('definition-atom')
 ];

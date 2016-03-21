@@ -9,9 +9,13 @@
 
 <div class="row">
   <div class="col-xs-6 source page">
-    {{render-mobiledoc mobiledoc=data.source}}
+    {{render-mobiledoc
+      mobiledoc=data.source
+      atomNames=(mobiledoc-atom-names)}}
   </div>
   <div class="col-xs-6 transversion facing-page">
-    {{render-mobiledoc mobiledoc=data.transversion}}
+    {{render-mobiledoc
+      mobiledoc=data.transversion
+      atomNames=(mobiledoc-atom-names)}}
   </div>
 </div>
