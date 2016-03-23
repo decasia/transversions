@@ -1,1 +1,25 @@
-{{yield}}
+<button class="{{buttonClassNames}}" {{action "addDefinition"}}>
+  {{yield}}
+</button>
+
+{{#if showPicker}}
+  <div class="modal-backdrop" {{action "cancelPicker"}}></div>
+  <div class="modal fade in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="pickTerms" style="display: block;">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" {{action "cancelPicker"}} aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Choose a term</h4>
+        </div>
+        <div class="modal-body">
+          <div class="list-group">
+            <a class="list-group-item" href="#" {{action "newTerm" candidateText}}>{{candidateText}} (New Term)</a>
+            {{#each sortedTerms as |term|}}
+              <a class="list-group-item" href="#" {{action "pickTerm" term}}>{{term.name}}</a>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{{/if}}
