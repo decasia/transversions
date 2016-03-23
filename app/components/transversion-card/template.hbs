@@ -1,21 +1,24 @@
 <hr>
 
-<div class="pull-right transversion-actions">
-  <button class="btn btn-small btn-primary" onclick={{editCard}}>Edit this section</button>
-</div>
+{{#if editor}}
+  <div class="pull-right transversion-actions">
+    <button class="btn btn-small btn-primary" onclick={{editCard}}>Edit this section</button>
+  </div>
+{{/if}}
+
 <p class="transversion-summary">
-  {{data.summary}}
+  {{payload.summary}}
 </p>
 
 <div class="row">
   <div class="col-xs-6 source page">
     {{render-mobiledoc
-      mobiledoc=data.source
+      mobiledoc=payload.source
       atomNames=(mobiledoc-atom-names)}}
   </div>
   <div class="col-xs-6 transversion facing-page">
     {{render-mobiledoc
-      mobiledoc=data.transversion
+      mobiledoc=payload.transversion
       atomNames=(mobiledoc-atom-names)}}
   </div>
 </div>
