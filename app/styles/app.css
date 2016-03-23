@@ -35,6 +35,7 @@ h3.editor-section-title {
 .__mobiledoc-editor, .__rendered-mobiledoc {
   font-size: 1.9rem;
   line-height: 2.6rem;
+  font-family: Lora, Georgia, serif;
 }
 
 .page, .facing-page {
