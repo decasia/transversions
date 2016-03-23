@@ -49,16 +49,38 @@ module.exports = function(app) {
       discussion: sampleDiscussion,
       example: sampleExample
     }
+  };
+
+  const sampleTerm2 = {
+    type: 'term',
+    id: 2,
+    attributes: {
+      name: 'doubtful',
+      definition: sampleDefinition,
+      discussion: sampleDiscussion,
+      example: sampleExample
+    }
   }
 
   termsRouter.get('/', function(req, res) {
     res.send({
-      'data': [sampleTerm]
+      'data': [sampleTerm, sampleTerm2]
     });
   });
 
   termsRouter.post('/', function(req, res) {
-    res.status(201).end();
+    res.status(201).send({
+      'data': {
+        type: 'term',
+        id: 3,
+        attributes: {
+          name: 'lalalala',
+          definition: sampleDefinition,
+          discussion: sampleDiscussion,
+          example: sampleExample
+        }
+      }
+    });
   });
 
   termsRouter.get('/:id', function(req, res) {
