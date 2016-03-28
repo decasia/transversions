@@ -1,6 +1,6 @@
 {{outlet}}
 
-{{#each model as |term|}}
+{{#each sortedTerms as |term|}}
   <dl>
     <dt>term</dt>
     <dd>{{link-to term.name "term.show" term}}</dd>
