@@ -1,10 +1,15 @@
 <h1>{{model.name}}</h1>
 
+{{#if model.hasDirtyAttributes}}
+  <button class="btn btn-success" {{action "saveChanges"}}>Save changes</button>
+{{/if}}
+
 <h3>Definition</h3>
 <div>
   {{#mobiledoc-editor
       atoms=(mobiledoc-atoms-list)
       cards=(mobiledoc-cards-list)
+      on-change=(action "updateAttribute" "definition")
       mobiledoc=model.definition as |editor|
   }}
     <div class="btn-toolbar">
@@ -25,6 +30,7 @@
   {{#mobiledoc-editor
       atoms=(mobiledoc-atoms-list)
       cards=(mobiledoc-cards-list)
+      on-change=(action "updateAttribute" "example")
       mobiledoc=model.example as |editor|
   }}
     <div class="btn-toolbar">
@@ -45,6 +51,7 @@
   {{#mobiledoc-editor
       atoms=(mobiledoc-atoms-list)
       cards=(mobiledoc-cards-list)
+      on-change=(action "updateAttribute" "discussion")
       mobiledoc=model.discussion as |editor|
   }}
     <div class="btn-toolbar">
