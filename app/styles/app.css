@@ -64,6 +64,10 @@ h3.editor-section-title {
   color: purple;
 }
 
+.__rendered-mobiledoc-atom {
+  margin-right: 5px;
+}
+
 .-mobiledoc-kit__atom div {
   display: inline-block;
 }
