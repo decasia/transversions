@@ -9,16 +9,24 @@
     atoms=(mobiledoc-atoms-list)
     cards=(mobiledoc-cards-list)
     on-change=(action "updateAttribute" "content")
+    classNames="transversion-page"
     mobiledoc=model.content as |editor|
 }}
   <div class="btn-toolbar">
     <div class="btn-group">
       {{#mobiledoc-section-button editor=editor for="h2" classNames="btn btn-default btn-sm"}}
-      Heading
+        Heading
       {{/mobiledoc-section-button}}
       {{#mobiledoc-section-button editor=editor for="h3" classNames="btn btn-default btn-sm"}}
-      Subheading
+        Subheading
       {{/mobiledoc-section-button}}
     </div>
+    {{#if allowNewTransversions}}
+      <div class="btn-group">
+        {{#mobiledoc-transversion-button editor=editor classNames="btn btn-default btn-sm"}}
+          Add transversion
+        {{/mobiledoc-transversion-button}}
+      </div>
+    {{/if}}
   </div>
 {{/mobiledoc-editor}}

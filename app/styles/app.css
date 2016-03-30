@@ -5,12 +5,22 @@ body, input, textarea, button {
 }
 
 .transversion-summary {
-  font-style: italic;
+  font-weight: bold;
   text-align: center;
 }
 
 .transversion, .transversion .__mobiledoc-editor  {
   color: #195D88 !important;
+}
+
+.__mobiledoc-card {
+  width: 100%;
+}
+
+/* Any transversion content that's not in a transversion card should be centered. */
+.transversion-page h2,
+.transversion-page h3 {
+  text-align: center;
 }
 
 .transversion-meta {
@@ -33,7 +43,7 @@ h3.editor-section-title {
 }
 
 .__mobiledoc-editor, .__rendered-mobiledoc {
-  font-size: 1.9rem;
+  font-size: 1.75rem;
   line-height: 2.6rem;
   font-family: Lora, Georgia, serif;
 }
