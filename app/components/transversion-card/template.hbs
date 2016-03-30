@@ -2,12 +2,16 @@
 
 {{#if editor}}
   <div class="pull-right transversion-actions">
-    <button class="btn btn-small btn-primary" onclick={{editCard}}>Edit this section</button>
+    <button class="btn btn-small btn-primary" onclick={{editCard}}>Edit section</button>
   </div>
 {{/if}}
 
 <p class="transversion-summary">
-  {{payload.summary}}
+  {{#if payload.summary}}
+    {{payload.summary}}
+  {{else}}
+    <em>This section needs a summary...</em>
+  {{/if}}
 </p>
 
 <div class="row">
