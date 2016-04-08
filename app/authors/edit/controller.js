@@ -2,16 +2,17 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   actions: {
-    newWork(name) {
+    newWork(attrs) {
       let model = this.get('model');
-      console.log('trying');
       this.store.createRecord('work', {
-        name: name,
+        name: attrs.get('name'),
         author: model
       }).save((work) => {
         model.get('works').pushObject(work);
-        console.log('done');
       });
+    },
+    save() {
+      this.get('model').save(); // TODO error handling
     }
   }
 });
