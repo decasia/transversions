@@ -1,6 +1,9 @@
-<h1>{{model.name}}</h1>
+<ol class="breadcrumb">
+  <li>{{link-to model.author.name "authors.show" model.author}}</li>
+  <li class="active">{{model.name}}</li>
+</ol>
 
-<p>{{link-to model.author.name "authors.show" model.author}}</p>
+<h1>{{model.name}}</h1>
 
 <p class="work-description">
   {{model.description}}

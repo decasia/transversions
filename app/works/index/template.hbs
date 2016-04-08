@@ -1,5 +1,23 @@
 <h1>Works</h1>
 
+{{#each authors as |author|}}
+  <h3>{{author.name}}</h3>
+
+  <ul class="nav nav-pills nav-stacked">
+    {{#each author.sortedWorks as |work|}}
+    <li>
+      {{#link-to "works.show" work}}
+        {{work.name}}
+      {{/link-to}}
+    </li>
+    {{else}}
+      <li class="text-warning">No works.</li>
+    {{/each}}
+  </ul>
+{{/each}}
+
+<hr>
+
 {{#new-model type="work"
     defaults=(hash name="" author="none")
     action="newWork"
@@ -19,11 +37,3 @@
   </div>
 
 {{/new-model}}
-
-<ul class="nav nav-pills nav-stacked">
-  {{#each model as |work|}}
-  <li>
-    {{link-to work.name "works.show" work}}
-  </li>
-  {{/each}}
-</ul>

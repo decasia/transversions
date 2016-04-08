@@ -1,7 +1,5 @@
 <h1>Authors</h1>
 
-{{new-model type="author" defaults=(hash name="") action="newAuthor"}}
-
 <ul class="nav nav-pills nav-stacked">
   {{#each model as |author|}}
   <li>
@@ -9,3 +7,6 @@
   </li>
   {{/each}}
 </ul>
+
+<hr>
+{{new-model type="author" defaults=(hash name="") action="newAuthor"}}
