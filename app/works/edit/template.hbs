@@ -1,0 +1,38 @@
+<h1>{{model.name}}</h1>
+
+<p>{{link-to model.author.name "authors.show" model.author}}</p>
+
+
+<div class="form">
+  <div class="work-name form-group">
+    Name
+    {{input value=model.name cols="50" rows="5" class="form-control"}}
+  </div>
+
+  <div class="work-description form-group">
+    Description
+    {{textarea value=model.description cols="50" rows="5" class="form-control"}}
+  </div>
+</div>
+
+{{#if model.hasDirtyAttributes}}
+  <button {{action "save"}} class="btn btn-primary">Save changes</button>
+{{/if}}
+
+<hr>
+
+<h3>Contents</h3>
+<ul class="nav nav-pills nav-stacked">
+  {{#each model.docs as |doc|}}
+  <li>
+    {{link-to doc.name "doc.show" doc}}
+  </li>
+  {{else}}
+  <li class="text-warning">
+    This work currently has no content.
+  </li>
+  {{/each}}
+</ul>
+
+<hr>
+{{new-model type="section" defaults=(hash name="") action="newDoc"}}

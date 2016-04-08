@@ -1,15 +1,23 @@
 <h1>{{model.name}}</h1>
 
-<h3>{{link-to model.author.name "authors.show" model.author}}</h3>
+<p>{{link-to model.author.name "authors.show" model.author}}</p>
 
 <p class="work-description">
   {{model.description}}
 </p>
 
+<h3>Contents</h3>
 <ul class="nav nav-pills nav-stacked">
   {{#each model.docs as |doc|}}
   <li>
     {{link-to doc.name "doc.show" doc}}
   </li>
+  {{else}}
+  <li class="text-warning">
+    This work currently has no content.
+  </li>
   {{/each}}
 </ul>
+
+<hr>
+{{link-to "Edit" "works.edit" model classNames="btn btn-info"}}

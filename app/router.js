@@ -23,6 +23,7 @@ Router.map(function() {
   });
   this.route('works', function() {
     this.route('show', { path: ':work_id' });
+    this.route('edit', { path: ':work_id/edit' });
   });
 });
 
