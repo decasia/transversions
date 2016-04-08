@@ -6,6 +6,6 @@ export default Ember.Route.extend({
   },
   setupController(controller, model) {
     controller.set('model', model);
-    this.store.findAll('author').then((authors) => controller.set('authors', authors));
+    this.store.findAll('author').then((authors) => controller.set('authors', authors.sortBy('name')));
   }
 });
