@@ -6,12 +6,11 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('docs');
-
-  this.route('doc', function() {
+  this.route('docs', function() {
     this.route('show', { path: ':doc_id' });
     this.route('edit', { path: ':doc_id/edit' });
   });
+  
   this.route('terms');
 
   this.route('term', function() {
