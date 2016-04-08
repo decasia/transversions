@@ -17,6 +17,13 @@ Router.map(function() {
   this.route('term', function() {
     this.route('show', { path: ':term_id' });
   });
+  this.route('authors', function() {
+    this.route('show', { path: ':author_id' });
+    this.route('edit', { path: ':author_id/edit' });
+  });
+  this.route('works', function() {
+    this.route('show', { path: ':work_id' });
+  });
 });
 
 export default Router;

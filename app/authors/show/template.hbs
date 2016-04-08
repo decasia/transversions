@@ -1,0 +1,21 @@
+<h1>{{model.name}}</h1>
+
+{{link-to "Edit" "authors.edit" model classNames="btn btn-info"}}
+
+<div class="author-description">
+  {{model.description}}
+</div>
+
+<h3>Works</h3>
+
+<ul class="nav nav-pills nav-stacked">
+  {{#each model.works as |work|}}
+  <li>
+    {{link-to work.name "works.show" work}}
+  </li>
+  {{else}}
+    <li class="text-warning">
+      This author has no works.
+    </li>
+  {{/each}}
+</ul>

@@ -1,0 +1,23 @@
+<button {{action "newModel"}} class="btn btn-success {{if editing "active"}}">
+  New {{type}}
+</button>
+{{#if editing}}
+  <div class="new-model-form form-inline">
+
+    <div class="form-group">
+      <label for="model-name">Name:</label>
+      {{input type="text" value=modelAttrs.name
+        placeholder="Enter name..."
+        classNames="form-control new-model-name"}}
+    </div>
+
+    {{yield (action "setAttr") modelAttrs}}
+
+    {{#if modelAttrs.name}}
+      <button {{action "createModel"}} class="btn btn-primary btn-sm">
+        Add {{type}}
+      </button>
+    {{/if}}
+
+  </div>
+{{/if}}

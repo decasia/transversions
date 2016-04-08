@@ -81,3 +81,18 @@ h3.editor-section-title {
 .-mobiledoc-kit__atom div {
   display: inline-block;
 }
+
+.new-model-form {
+  border: 1px #ccc solid;
+  padding: 10px 12px;
+  background-color: #666;
+  color: white;
+  display: inline-block;
+  border-radius: 10px;
+}
+.new-model-form input {
+  color: black;
+}
+.new-model-form .new-model-name {
+  min-width: 25em;
+}

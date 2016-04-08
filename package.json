@@ -41,6 +41,7 @@
     "ember-mobiledoc-editor": "git://github.com/decasia/ember-mobiledoc-editor.git#7d39a98377853c9554f5fc7d6c8e05b0b03b3c8d",
     "ember-resolver": "^2.0.3",
     "ember-wormhole": "0.3.5",
+    "emberx-select": "2.1.1",
     "express": "^4.13.4",
     "glob": "^4.5.3",
     "loader.js": "^4.0.0",

@@ -1,18 +1,9 @@
 import DS from 'ember-data';
-
-function emptyMobileDoc() {
-  return {
-    version: "0.3.0",
-    markups: [],
-    atoms: [],
-    cards: [],
-    sections: []
-  };
-}
+import blankMobileDoc from 'transverse/utils/blank-mobiledoc';
 
 export default DS.Model.extend({
   name: DS.attr('string'),
-  example: DS.attr('mobiledoc', {defaultValue: emptyMobileDoc()}),
-  definition: DS.attr('mobiledoc', {defaultValue: emptyMobileDoc()}),
-  discussion: DS.attr('mobiledoc', {defaultValue: emptyMobileDoc()})
+  example: DS.attr('mobiledoc', {defaultValue: blankMobileDoc()}),
+  definition: DS.attr('mobiledoc', {defaultValue: blankMobileDoc()}),
+  discussion: DS.attr('mobiledoc', {defaultValue: blankMobileDoc()})
 });

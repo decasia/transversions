@@ -1,0 +1,11 @@
+<h1>Authors</h1>
+
+{{new-model type="author" action="newAuthor"}}
+
+<ul class="nav nav-pills nav-stacked">
+  {{#each model as |author|}}
+  <li>
+    {{link-to author.name "authors.show" author}}
+  </li>
+  {{/each}}
+</ul>

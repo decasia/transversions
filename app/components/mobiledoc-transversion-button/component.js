@@ -1,20 +1,10 @@
 import Ember from 'ember';
 import Range from 'mobiledoc-kit/utils/cursor/range';
-
+import blankMobileDoc from 'transverse/utils/blank-mobiledoc';
 let { Component } = Ember;
 
-function emptyMobileDoc() {
-  return {
-    version: "0.3.0",
-    markups: [],
-    atoms: [],
-    cards: [],
-    sections: []
-  };
-}
-
 function newTransversionCard(text) {
-  let source = emptyMobileDoc();
+  let source = blankMobileDoc();
   if (text) { // Only prepopulate text if there is any!
     source.sections = [
       [
@@ -26,7 +16,7 @@ function newTransversionCard(text) {
   }
   return {
     summary: '',
-    transversion: emptyMobileDoc(),
+    transversion: blankMobileDoc(),
     source: source
   };
 }

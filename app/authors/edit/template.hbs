@@ -1,0 +1,26 @@
+<h1>Edit {{model.name}}</h1>
+
+<div class="author-name">
+  {{input value=model.name cols="50" rows="5"}}
+</div>
+
+<div class="author-description">
+  {{textarea value=model.description cols="50" rows="5"}}
+</div>
+
+<h3>Works</h3>
+
+<ul class="nav nav-pills nav-stacked">
+  {{#each model.works as |work|}}
+  <li>
+    {{link-to work.name "works.show" work}}
+  </li>
+  {{else}}
+    <li class="text-warning">
+      This author has no works.
+    </li>
+  {{/each}}
+</ul>
+
+<hr>
+{{new-model type="work" action="newWork"}}

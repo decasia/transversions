@@ -1,0 +1,15 @@
+<h1>{{model.name}}</h1>
+
+<h3>{{link-to model.author.name "authors.show" model.author}}</h3>
+
+<p class="work-description">
+  {{model.description}}
+</p>
+
+<ul class="nav nav-pills nav-stacked">
+  {{#each model.docs as |doc|}}
+  <li>
+    {{link-to doc.name "doc.show" doc}}
+  </li>
+  {{/each}}
+</ul>
