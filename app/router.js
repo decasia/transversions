@@ -10,12 +10,17 @@ Router.map(function() {
     this.route('show', { path: ':doc_id' });
     this.route('edit', { path: ':doc_id/edit' });
   });
-  
+
   this.route('terms');
 
   this.route('term', function() {
     this.route('show', { path: ':term_id' });
   });
+
+  this.route('notes', function() {
+    this.route('show', { path: ':note_id' });
+  });
+
   this.route('authors', function() {
     this.route('show', { path: ':author_id' });
     this.route('edit', { path: ':author_id/edit' });

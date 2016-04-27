@@ -1,0 +1,9 @@
+<h1>Notes</h1>
+
+<ul>
+  {{#each model as |note|}}
+    <li>{{note.name}}</li>
+  {{else}}
+    <li>THERE ARE NO NOTES</li>
+  {{/each}}
+</ul>

@@ -38,7 +38,7 @@
     "ember-export-application-global": "^1.0.4",
     "ember-load-initializers": "^0.5.0",
     "ember-mobiledoc-dom-renderer": "git://github.com/bustlelabs/ember-mobiledoc-dom-renderer.git#06d79afb3f13372f7cb44fe49e72d3e44e8e9ce6",
-    "ember-mobiledoc-editor": "git://github.com/decasia/ember-mobiledoc-editor.git#7d39a98377853c9554f5fc7d6c8e05b0b03b3c8d",
+    "ember-mobiledoc-editor": "git://github.com/decasia/ember-mobiledoc-editor.git#pass-component-options",
     "ember-resolver": "^2.0.3",
     "ember-wormhole": "0.3.5",
     "emberx-select": "2.1.1",
@@ -46,5 +46,8 @@
     "glob": "^4.5.3",
     "loader.js": "^4.0.0",
     "morgan": "^1.7.0"
+  },
+  "dependencies": {
+    "ember-mobiledoc-editor": "github:decasia/ember-mobiledoc-editor#pass-component-options"
   }
 }

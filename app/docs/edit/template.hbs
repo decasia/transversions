@@ -14,6 +14,10 @@
 {{#mobiledoc-editor
     atoms=(mobiledoc-atoms-list)
     cards=(mobiledoc-cards-list)
+    options=(hash cardOptions=(hash
+      createTerm=(action "createRecord" "term")
+      createNote=(action "createRecord" "note")
+    ))
     on-change=(action "updateAttribute" "content")
     classNames="transversion-page"
     mobiledoc=model.content as |editor|

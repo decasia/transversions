@@ -1,5 +1,4 @@
 <hr>
-
 <div class="row transversion-meta">
   <div class="col-xs-10 summary">
     <label>Summary</label>
@@ -34,9 +33,20 @@
           {{/mobiledoc-markup-button}}
         </div>
         <div class="btn-group">
-          {{#mobiledoc-definition-button editor=editor buttonClassNames="btn btn-default btn-sm btn-info"}}
+          {{#mobiledoc-definition-button
+              editor=editor
+              options=options
+              buttonClassNames="btn btn-default btn-sm btn-info"}}
             Define
           {{/mobiledoc-definition-button}}
+        </div>
+        <div class="btn-group">
+          {{#mobiledoc-note-button
+              editor=editor
+              options=options
+              buttonClassNames="btn btn-default btn-sm btn-info"}}
+            Note
+          {{/mobiledoc-note-button}}
         </div>
       </div>
     {{/mobiledoc-editor}}

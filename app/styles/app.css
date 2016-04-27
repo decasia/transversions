@@ -65,11 +65,18 @@ h3.editor-section-title {
 .definition-atom a:link,
 .definition-atom a:visited,
 .definition-atom a:active,
-.definition-atom a:hover {
+.definition-atom a:hover,
+.note-atom a,
+.note-atom a:link,
+.note-atom a:visited,
+.note-atom a:active,
+.note-atom a:hover {
   color: white;
 }
 .definition-atom a:active,
-.definition-atom a:hover {
+.definition-atom a:hover,
+.note-atom a:active,
+.note-atom a:hover {
   text-decoration: none;
   color: purple;
 }

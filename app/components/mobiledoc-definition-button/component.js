@@ -62,10 +62,10 @@ export default Component.extend({
       this.set('showPicker', false);
     },
     newTerm(name) {
-      const newTerm = this.get('store').createRecord('term', {name: name});
-      newTerm.save().then( () => {
+      var actionPromise = this.get('options.createTerm')(name);
+      actionPromise.then((newTerm) => {
         this.addTermToSelection(newTerm);
-        this.set('showPicker', false);        
+        this.set('showPicker', false);
       });
     }
   }
