@@ -5,7 +5,9 @@ export default Ember.Controller.extend({
     newAuthor(attrs) {
       this.store.createRecord('author', {
         name: attrs.name
-      }).save(); // TODO: error handling
+      }).save().then(
+        (record) => this.get('model').pushObject(record)
+      ); // TODO: error handling
     }
   }
 });
