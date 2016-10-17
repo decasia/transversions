@@ -16,13 +16,21 @@
 
 <div class="row">
   <div class="col-xs-6 source page">
-    {{render-mobiledoc
-      mobiledoc=payload.source
-      atomNames=(mobiledoc-atom-names)}}
+    {{#if payload.source}}
+      {{render-mobiledoc
+        mobiledoc=payload.source
+        atomNames=(mobiledoc-atom-names)}}
+    {{else}}
+      <em>This section has a technical issue with its source text. Ask for help!</em>
+    {{/if}}
   </div>
   <div class="col-xs-6 transversion facing-page">
-    {{render-mobiledoc
-      mobiledoc=payload.transversion
-      atomNames=(mobiledoc-atom-names)}}
+    {{#if payload.transversion}}
+      {{render-mobiledoc
+        mobiledoc=payload.transversion
+        atomNames=(mobiledoc-atom-names)}}
+    {{else}}
+      <em>This section has a technical issue with its source text. Ask for help!</em>
+    {{/if}}
   </div>
 </div>
