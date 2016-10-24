@@ -28,6 +28,18 @@
           <a href="#">Glossary</a>
         {{/link-to}}
       </ul>
+      <ul class="nav navbar-nav navbar-right">
+        {{#if loggedIn}}
+          {{#link-to "user.about" tagName="li"}}
+            <a href="#">{{currentUser.username}}</a>
+          {{/link-to}}
+        {{else}}
+          {{#link-to "user.login" tagName="li"}}
+            <a href="#">Log in</a>
+          {{/link-to}}
+        {{/if}}
+      </ul>
     </div>
+
   </div>
 </nav>

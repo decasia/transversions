@@ -29,6 +29,13 @@ Router.map(function() {
     this.route('show', { path: ':work_id' });
     this.route('edit', { path: ':work_id/edit' });
   });
+
+  this.route('auth', function() {});
+
+  this.route('user', function() {
+    this.route('login');
+    this.route('about');
+  });
 });
 
 export default Router;

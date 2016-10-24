@@ -1,0 +1,19 @@
+<h1>User Information</h1>
+
+{{#if loggedIn}}
+
+  <dl>
+    <dt>Name</dt>
+    <dd>{{currentUser.username}}</dd>
+
+    <dt>Email</dt>
+    <dd>{{currentUser.email}}</dd>
+  </dl>
+
+{{else}}
+
+  <div class="alert alert-warning">
+    You may wish to {{link-to "Log In" "user.login"}}.
+  </div>
+
+{{/if}}

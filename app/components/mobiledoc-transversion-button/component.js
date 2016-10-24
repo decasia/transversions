@@ -53,7 +53,9 @@ export default Component.extend({
               range = editor.range;
 
         editorComponent.addCard('transversion-card', newTransversionCard(text));
-        postEditor.removeSection(section);
+        if (section && section.parent) {
+          postEditor.removeSection(section);
+        }
       });
     } else {
       editorComponent.addCard('transversion-card', newTransversionCard(text));

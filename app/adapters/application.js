@@ -7,8 +7,20 @@ const { underscore, pluralize } = Ember.String;
 
 export default DS.JSONAPIAdapter.extend({
   namespace: 'api',
+  auth: Ember.inject.service(),
+  jwtHeader: Ember.computed.alias('auth.jwtHeader'),
+
   pathForType: function(type) {
     let underscored = underscore(type);
     return pluralize(underscored);
-  }
+  },
+
+  headers: Ember.computed('jwtHeader', function() {
+    let jwtHeader = this.get('auth.jwtHeader');
+    if (jwtHeader) {
+      return { 'Authorization': jwtHeader };
+    } else {
+      return {};
+    }
+  })
 });
