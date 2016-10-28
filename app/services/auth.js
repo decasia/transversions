@@ -1,10 +1,10 @@
 import Ember from 'ember';
+import ENV from 'transverse/config/environment';
 
 export default Ember.Service.extend({
   store: Ember.inject.service(),
 
-  // TODO this should get set in the ENV
-  authUrl: 'http://localhost:4200/auth/user_token',
+  authUrl: ENV.authTokenRoute,
 
   jwtHeader: null,
   currentUser: null,
@@ -28,6 +28,7 @@ export default Ember.Service.extend({
         password: password
       }
     };
+    console.log(url);
 
     return new Ember.RSVP.Promise(function(resolve,reject) {
       Ember.$.ajax({
@@ -35,6 +36,7 @@ export default Ember.Service.extend({
         url: url,
         data: data,
         success: function(response) {
+          // TODO persist jwt in localStorage
           _this.set('jwtHeader', `Bearer: ${response.jwt}`);
           resolve(response);
         },

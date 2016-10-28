@@ -7,6 +7,7 @@ module.exports = function(environment) {
     baseURL: '/',
     locationType: 'auto',
     apiNamespace: 'api',
+    authTokenRoute: process.env['AUTH_TOKEN_ROUTE'],
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -41,7 +42,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.apiNamespace = 'transversions/api';
+    ENV.apiNamespace = process.env['API_PATH'];
+    ENV.baseURL = process.env['BASE_PATH'];
   }
 
   return ENV;
