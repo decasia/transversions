@@ -36,8 +36,7 @@ export default Ember.Service.extend({
         url: url,
         data: data,
         success: function(response) {
-          // TODO persist jwt in localStorage
-          _this.set('jwtHeader', `Bearer: ${response.jwt}`);
+          _this.setupToken(response.jwt);
           resolve(response);
         },
         error: function(reason) {
@@ -45,6 +44,15 @@ export default Ember.Service.extend({
         }
       });
     });
+  },
+
+  setupToken: function(token) {
+    this.setHeader(token);
+    window.sessionStorage.setItem('jwt', token);
+  },
+
+  setHeader: function(token) {
+    this.set('jwtHeader', `Bearer: ${token}`);
   },
 
   loadUser: function() {
