@@ -30,12 +30,13 @@ Router.map(function() {
     this.route('edit', { path: ':work_id/edit' });
   });
 
-  this.route('auth', function() {});
-
   this.route('user', function() {
     this.route('login');
     this.route('about');
+    this.route('token', { path: 'token/:jwt' });
   });
+
+  this.route('not-found', { path: '/*path' });
 });
 
 export default Router;
