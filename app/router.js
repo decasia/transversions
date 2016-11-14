@@ -6,10 +6,6 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('docs', function() {
-    this.route('show', { path: ':doc_id' });
-    this.route('edit', { path: ':doc_id/edit' });
-  });
 
   this.route('terms', function() {
     this.route('show', { path: ':term_id' });
