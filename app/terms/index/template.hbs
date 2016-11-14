@@ -1,15 +1,15 @@
 <h1>Glossary</h1>
 
-{{#each model as |author|}}
-  <h3>Glossary for {{author.name}}</h3>
+{{#each sortedAuthors as |author|}}
 
-  <ul class="nav nav-pills nav-stacked">
-    {{#each author.sortedTerms as |term|}}
-    <li>
-      {{link-to term.name "terms.show" term}}
-    </li>
-    {{else}}
-      <li class="text-warning">No content</li>
-    {{/each}}
-  </ul>
+  {{#if author.sortedNotes}}
+    <h3>{{author.name}}</h3>
+
+    <ul class="nav nav-pills nav-stacked">
+      {{#each author.sortedTerms as |term|}}
+        <li>{{link-to term.name "terms.show" term}}</li>
+      {{/each}}
+    </ul>
+  {{/if}}
+
 {{/each}}

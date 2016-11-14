@@ -1,0 +1,16 @@
+<ol class="breadcrumb">
+  <li>{{link-to "Notes" "notes"}}</li>
+  <li class="active">{{model.name}}</li>
+</ol>
+
+<h1>Notes for {{model.name}}</h1>
+
+<ul class="nav nav-pills nav-stacked">
+  {{#each sortedNotes as |note|}}
+  <li>
+    {{link-to note.name "notes.show" note}}
+  </li>
+  {{else}}
+    <li class="text-warning">No notes for {{model.name}}.</li>
+  {{/each}}
+</ul>

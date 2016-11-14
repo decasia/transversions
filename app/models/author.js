@@ -14,5 +14,8 @@ export default DS.Model.extend({
   sortedWorks: Ember.computed.sort('works', 'workSort'),
 
   termSort: ['name'],
-  sortedTerms: Ember.computed.sort('terms', 'termSort')
+  sortedTerms: Ember.computed.sort('terms', 'termSort'),
+
+  noteSort: ['name'],
+  sortedNotes: Ember.computed.sort('notes', 'noteSort')
 });

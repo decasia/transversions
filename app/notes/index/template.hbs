@@ -1,11 +1,15 @@
 <h1>Notes</h1>
 
-<ul>
-  {{#each model as |note|}}
-    <li>{{link-to note.name "notes.show" note}}</li>
-  {{else}}
-  <div class="alert alert-warning">
-    The glossary currently contains no terms.
-  </div>
-  {{/each}}
-</ul>
+{{#each sortedAuthors as |author|}}
+
+  {{#if author.sortedNotes}}
+    <h3>{{author.name}}</h3>
+
+    <ul class="nav nav-pills nav-stacked">
+      {{#each author.sortedNotes as |note|}}
+        <li>{{link-to note.name "notes.show" note}}</li>
+      {{/each}}
+    </ul>
+  {{/if}}
+
+{{/each}}
