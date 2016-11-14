@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  flashMessages: Ember.inject.service(),
   actions: {
     newWork(attrs) {
       let model = this.get('model');
@@ -12,7 +13,10 @@ export default Ember.Controller.extend({
       });
     },
     save() {
-      this.get('model').save(); // TODO error handling
+      this.get('model').save().then((model) => {
+        this.get('flashMessages').success('Your changed were saved.');
+        this.transitionToRoute('authors.show', model);
+      }); // TODO error handling
     }
   }
 });

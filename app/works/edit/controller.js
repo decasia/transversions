@@ -14,7 +14,10 @@ export default Ember.Controller.extend({
       });
     },
     save() {
-      this.get('model').save(); // TODO error handling
+      this.get('model').save().then((model) => {
+        this.get('flashMessages').success('Your changed were saved.');
+        this.transitionToRoute('works.show', model);
+      }); // TODO error handling
     }
   }
 });
