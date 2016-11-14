@@ -1,3 +1,8 @@
+<ol class="breadcrumb">
+  <li>{{link-to "Authors" "authors.index"}}</li>
+  <li class="active">{{model.name}}</li>
+</ol>
+
 <h1>{{model.name}}</h1>
 
 <div class="author-description">
@@ -19,4 +24,4 @@
 </ul>
 
 <hr>
-{{link-to "Edit" "authors.edit" model classNames="btn btn-info"}}
+{{link-to "Edit this author" "authors.edit" model classNames="btn btn-info"}}
