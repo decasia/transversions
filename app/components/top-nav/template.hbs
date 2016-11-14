@@ -31,7 +31,7 @@
       <ul class="nav navbar-nav navbar-right">
         {{#if loggedIn}}
           {{#link-to "user.about" tagName="li"}}
-            <a href="#">{{currentUser.username}}</a>
+            <a href="#">{{currentUser.username}} ({{currentUser.currentGroupName}})</a>
           {{/link-to}}
         {{else}}
           {{#link-to "user.login" tagName="li"}}

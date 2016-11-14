@@ -3,11 +3,14 @@
 {{#if loggedIn}}
 
   <dl>
-    <dt>Name</dt>
+    <dt>Username</dt>
     <dd>{{currentUser.username}}</dd>
 
     <dt>Email</dt>
     <dd>{{currentUser.email}}</dd>
+
+    <dt>Current Group</dt>
+    <dd>{{currentUser.currentGroupName}}</dd>
   </dl>
 
 {{else}}
