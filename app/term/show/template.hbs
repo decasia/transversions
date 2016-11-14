@@ -1,3 +1,9 @@
+<ol class="breadcrumb">
+  <li>{{link-to "Terms" "terms.index"}}</li>
+  <li>{{link-to model.author.name "authors.show" model.author}}</li>
+  <li class="active">{{model.name}}</li>
+</ol>
+
 <h1>{{model.name}}</h1>
 
 {{#if model.hasDirtyAttributes}}

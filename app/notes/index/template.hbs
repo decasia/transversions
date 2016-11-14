@@ -2,8 +2,10 @@
 
 <ul>
   {{#each model as |note|}}
-    <li>{{note.name}}</li>
+    <li>{{link-to note.name "notes.show" note}}</li>
   {{else}}
-    <li>THERE ARE NO NOTES</li>
+  <div class="alert alert-warning">
+    The glossary currently contains no terms.
+  </div>
   {{/each}}
 </ul>

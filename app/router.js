@@ -11,9 +11,7 @@ Router.map(function() {
     this.route('edit', { path: ':doc_id/edit' });
   });
 
-  this.route('terms');
-
-  this.route('term', function() {
+  this.route('terms', function() {
     this.route('show', { path: ':term_id' });
   });
 
@@ -25,9 +23,12 @@ Router.map(function() {
     this.route('show', { path: ':author_id' });
     this.route('edit', { path: ':author_id/edit' });
   });
+
   this.route('works', function() {
     this.route('show', { path: ':work_id' });
     this.route('edit', { path: ':work_id/edit' });
+    this.route('show-doc', { path: 'section/:doc_id' });
+    this.route('edit-doc', { path: 'section/:doc_id/edit' });
   });
 
   this.route('user', function() {

@@ -1,0 +1,12 @@
+<h1>Glossary</h1>
+
+{{#each sortedTerms as |term|}}
+  <dl>
+    <dt>{{link-to term.name "terms.show" term}}</dt>
+    <dd>{{render-mobiledoc mobiledoc=term.definition}}</dd>
+  </dl>
+{{else}}
+  <div class="alert alert-warning">
+    The glossary currently contains no terms.
+  </div>
+{{/each}}
