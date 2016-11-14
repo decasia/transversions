@@ -9,6 +9,7 @@ Router.map(function() {
 
   this.route('terms', function() {
     this.route('show', { path: ':term_id' });
+    this.route('author', { path: 'authors/:author_id' });
   });
 
   this.route('notes', function() {

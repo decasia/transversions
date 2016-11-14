@@ -1,0 +1,17 @@
+<ol class="breadcrumb">
+  <li>{{link-to "Glossary" "terms"}}</li>
+  <li class="active">{{model.name}}</li>
+</ol>
+
+<h1>Glossary for {{model.name}}</h1>
+
+{{#each sortedTerms as |term|}}
+  <dl>
+    <dt>{{link-to term.name "terms.show" term}}</dt>
+    <dd>{{render-mobiledoc mobiledoc=term.definition}}</dd>
+  </dl>
+{{else}}
+  <div class="alert alert-warning">
+    The {{model.name}} glossary is empty.
+  </div>
+{{/each}}

@@ -1,12 +1,15 @@
 <h1>Glossary</h1>
 
-{{#each sortedTerms as |term|}}
-  <dl>
-    <dt>{{link-to term.name "terms.show" term}}</dt>
-    <dd>{{render-mobiledoc mobiledoc=term.definition}}</dd>
-  </dl>
-{{else}}
-  <div class="alert alert-warning">
-    The glossary currently contains no terms.
-  </div>
+{{#each model as |author|}}
+  <h3>Glossary for {{author.name}}</h3>
+
+  <ul class="nav nav-pills nav-stacked">
+    {{#each author.sortedTerms as |term|}}
+    <li>
+      {{link-to term.name "terms.show" term}}
+    </li>
+    {{else}}
+      <li class="text-warning">No content</li>
+    {{/each}}
+  </ul>
 {{/each}}
