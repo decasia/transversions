@@ -8,6 +8,7 @@ module.exports = function(environment) {
     locationType: 'auto',
     apiNamespace: 'api',
     authTokenRoute: process.env['AUTH_TOKEN_ROUTE'],
+    authChangeGroupRoute: process.env['AUTH_CHANGE_GROUP_ROUTE'],
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

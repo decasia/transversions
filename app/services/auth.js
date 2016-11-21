@@ -5,6 +5,7 @@ export default Ember.Service.extend({
   store: Ember.inject.service(),
 
   authUrl: ENV.authTokenRoute,
+  changeGroupUrl: ENV.authChangeGroupRoute,
 
   jwtHeader: null,
   currentUser: null,
@@ -20,15 +21,14 @@ export default Ember.Service.extend({
   }.observes('jwtHeader'),
 
   login: function(username, password) {
-    let  _this = this,
-    url = this.get('authUrl'),
-    data = {
-      auth: {
-        username: username,
-        password: password
-      }
-    };
-    console.log(url);
+    let _this = this,
+        url   = this.get('authUrl'),
+        data  = {
+          auth: {
+            username: username,
+            password: password
+          }
+        };
 
     return new Ember.RSVP.Promise(function(resolve,reject) {
       Ember.$.ajax({
@@ -44,6 +44,31 @@ export default Ember.Service.extend({
         }
       });
     });
+  },
+
+  changeGroup: function(newGroupId) {
+    let _this   = this,
+        url     = this.get('changeGroupUrl'),
+        data    = { group_id: newGroupId },
+        headers = { 'Authorization': this.get('jwtHeader') };
+
+    return new Ember.RSVP.Promise(function(resolve,reject) {
+      Ember.$.ajax({
+        type: 'POST',
+        url: url,
+        data: data,
+        headers: headers,
+        success: function(response) {
+          _this.get('store').unloadAll(); // clears all existing data.
+          _this.loadUser();
+          resolve(response);
+        },
+        error: function(reason) {
+          reject(reason);
+        }
+      });
+    });
+
   },
 
   setupToken: function(token) {

@@ -1,17 +1,38 @@
-<h1>User Information</h1>
+<h1>{{currentUser.name}} - Account Details</h1>
 
 {{#if loggedIn}}
 
-  <dl>
+  <dl class="dl-horizontal">
+    <dt>Name</dt>
+    <dd>{{currentUser.name}}</dd>
+
     <dt>Username</dt>
     <dd>{{currentUser.username}}</dd>
 
+    <dt>Campus Role</dt>
+    <dd>{{currentUser.lmsRole}}</dd>
+
     <dt>Email</dt>
     <dd>{{currentUser.email}}</dd>
-
-    <dt>Current Group</dt>
-    <dd>{{currentUser.currentGroupName}}</dd>
   </dl>
+
+  <h4>Your groups:</h4>
+
+  <ul class="nav nav-pills nav-stacked">
+    {{#each currentUser.groupData as |group|}}
+    <li>
+      {{#if group.current}}
+        <a class="disabled">
+          {{group.name}} (active)
+        </a>
+      {{else}}
+        <a href="#" {{action "chooseGroup" group.id}}>
+          {{group.name}}
+        </a>
+      {{/if}}
+    </li>
+    {{/each}}
+  </ul>
 
 {{else}}
 
