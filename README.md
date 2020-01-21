@@ -36,9 +36,18 @@ You will need the following things properly installed on your computer.
 
 ## Running / Development
 
-* `ember server --proxy localhost:XYZ`
-(Use the --proxy option to connect to a local instance of the back end.)
+* `ember server --proxy localhost:3000`
+(Use the --proxy option to connect to a local instance of the Rails back end.)
 * Visit your app at [http://localhost:4200](http://localhost:4200).
+
+You will need an `.env` file to tell the Ember app how to find the server authorization endpoints.
+
+Good values for development:
+
+```
+AUTH_TOKEN_ROUTE='http://localhost:4200/auth/user_token'
+AUTH_CHANGE_GROUP_ROUTE='http://localhost:4200/auth/change_group'
+```
 
 ### Running Tests
 
