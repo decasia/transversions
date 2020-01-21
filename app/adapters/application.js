@@ -5,7 +5,9 @@ import ENV from 'transverse/config/environment';
 import DS from 'ember-data';
 
 import Ember from 'ember';
-const { underscore, pluralize } = Ember.String;
+const { underscore } = Ember.String;
+
+import { pluralize } from 'ember-inflector';
 
 export default DS.JSONAPIAdapter.extend({
   namespace: ENV.apiNamespace,
