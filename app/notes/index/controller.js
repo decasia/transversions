@@ -3,5 +3,8 @@ const {computed} = Ember;
 
 export default Ember.Controller.extend({
   sortBy: ['name'],
-  sortedAuthors: computed.sort('model', 'sortBy')
+  sortedAuthors: computed.sort('model', 'sortBy'),
+  notesLength: computed.sum('sortedAuthors.@each.notesLength'),
+  noContent: computed.equal('notesLength', 0)
+
 });
